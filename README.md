@@ -20,3 +20,7 @@ npm install recharts
 ```
 npm install mongoose --save
 ```
+
+```
+npm i use-debounce --save
+```

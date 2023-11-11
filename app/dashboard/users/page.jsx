@@ -7,9 +7,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const UsersPage = async ({ searchParams }) => {
-  // const q = searchParams?.q || "";
+  const q = searchParams?.q || '';
   // const page = searchParams?.page || 1;
-  const users = await fetchUsers();
+  const users = await fetchUsers(q);
   console.log(users);
   // const { count, users } = await fetchUsers(q, page);
 
