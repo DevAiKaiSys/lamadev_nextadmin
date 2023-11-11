@@ -3,13 +3,13 @@ import Link from 'next/link';
 import styles from '@/app/ui/dashboard/products/products.module.css';
 import Search from '@/app/ui/dashboard/search/search';
 import Pagination from '@/app/ui/dashboard/pagination/pagination';
-// import { fetchProducts } from "@/app/lib/data";
+import { fetchProducts } from '@/app/lib/data';
 // import { deleteProduct } from "@/app/lib/actions";
 
 const ProductsPage = async ({ searchParams }) => {
-  // const q = searchParams?.q || "";
-  // const page = searchParams?.page || 1;
-  // const { count, products } = await fetchProducts(q, page);
+  const q = searchParams?.q || '';
+  const page = searchParams?.page || 1;
+  const { count, products } = await fetchProducts(q, page);
 
   return (
     <div className={styles.container}>
@@ -31,7 +31,7 @@ const ProductsPage = async ({ searchParams }) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
+          {/* <tr>
             <td>
               <div className={styles.product}>
                 <Image
@@ -60,8 +60,8 @@ const ProductsPage = async ({ searchParams }) => {
                 </button>
               </div>
             </td>
-          </tr>
-          {/* {products.map((product) => (
+          </tr> */}
+          {products.map((product) => (
             <tr key={product.id}>
               <td>
                 <div className={styles.product}>
@@ -86,19 +86,20 @@ const ProductsPage = async ({ searchParams }) => {
                       View
                     </button>
                   </Link>
-                  <form action={deleteProduct}>
-                    <input type="hidden" name="id" value={product.id} />
-                    <button className={`${styles.button} ${styles.delete}`}>
-                      Delete
-                    </button>
-                  </form>
+                  {/* <form action={deleteProduct}> */}
+                  <input type="hidden" name="id" value={product.id} />
+                  <button className={`${styles.button} ${styles.delete}`}>
+                    Delete
+                  </button>
+                  {/* </form> */}
                 </div>
               </td>
             </tr>
-          ))} */}
+          ))}
         </tbody>
       </table>
-      <Pagination />
+      {/* <Pagination /> */}
+      <Pagination count={count} />
     </div>
   );
 };
