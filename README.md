@@ -12,3 +12,7 @@ Would you like to customize the default import alias (@/\*)? No
 ```
 npm install react-icons --save
 ```
+
+```
+npm install recharts
+```
