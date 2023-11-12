@@ -24,3 +24,7 @@ npm install mongoose --save
 ```
 npm i use-debounce --save
 ```
+
+```
+npm install bcrypt
+```
