@@ -1,24 +1,24 @@
 // import { updateUser } from "@/app/lib/actions";
-// import { fetchUser } from "@/app/lib/data";
+import { fetchUser } from '@/app/lib/data';
 import styles from '@/app/ui/dashboard/users/singleUser/singleUser.module.css';
 import Image from 'next/image';
 
 const SingleUserPage = async ({ params }) => {
-  // const { id } = params;
-  // const user = await fetchUser(id);
+  const { id } = params;
+  const user = await fetchUser(id);
 
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="" fill />
-          {/* <Image src={user.img || '/noavatar.png'} alt="" fill /> */}
+          {/* <Image src="/noavatar.png" alt="" fill /> */}
+          <Image src={user.img || '/noavatar.png'} alt="" fill />
         </div>
-        John Doe
-        {/* {user.username} */}
+        {/* John Doe */}
+        {user.username}
       </div>
       <div className={styles.formContainer}>
-        <form action="" className={styles.form}>
+        {/* <form action="" className={styles.form}>
           <label>Username</label>
           <input type="text" name="username" placeholder="John Doe" />
           <label>Email</label>
@@ -40,8 +40,9 @@ const SingleUserPage = async ({ params }) => {
             <option value={false}>No</option>
           </select>
           <button>Update</button>
-        </form>
-        {/* <form action={updateUser} className={styles.form}>
+        </form> */}
+        <form action="" className={styles.form}>
+          {/* <form action={updateUser} className={styles.form}> */}
           <input type="hidden" name="id" value={user.id} />
           <label>Username</label>
           <input type="text" name="username" placeholder={user.username} />
@@ -72,7 +73,7 @@ const SingleUserPage = async ({ params }) => {
             </option>
           </select>
           <button>Update</button>
-        </form> */}
+        </form>
       </div>
     </div>
   );
