@@ -1,20 +1,8 @@
-import { Product, User } from './models';
-import { connectToDB } from './utils';
-
-// export const fetchUsers = async (q) => {
-//   const regex = new RegExp(q, 'i');
-//   try {
-//     connectToDB();
-//     const users = await User.find({ username: { $regex: regex } });
-//     return users;
-//   } catch (err) {
-//     console.log(err);
-//     throw new Error('Failed to fetch users!');
-//   }
-// };
+import { Product, User } from "./models";
+import { connectToDB } from "./utils";
 
 export const fetchUsers = async (q, page) => {
-  const regex = new RegExp(q, 'i');
+  const regex = new RegExp(q, "i");
 
   const ITEM_PER_PAGE = 2;
 
@@ -27,7 +15,7 @@ export const fetchUsers = async (q, page) => {
     return { count, users };
   } catch (err) {
     console.log(err);
-    throw new Error('Failed to fetch users!');
+    throw new Error("Failed to fetch users!");
   }
 };
 
@@ -39,13 +27,13 @@ export const fetchUser = async (id) => {
     return user;
   } catch (err) {
     console.log(err);
-    throw new Error('Failed to fetch user!');
+    throw new Error("Failed to fetch user!");
   }
 };
 
 export const fetchProducts = async (q, page) => {
   console.log(q);
-  const regex = new RegExp(q, 'i');
+  const regex = new RegExp(q, "i");
 
   const ITEM_PER_PAGE = 2;
 
@@ -58,7 +46,7 @@ export const fetchProducts = async (q, page) => {
     return { count, products };
   } catch (err) {
     console.log(err);
-    throw new Error('Failed to fetch products!');
+    throw new Error("Failed to fetch products!");
   }
 };
 
@@ -69,7 +57,7 @@ export const fetchProduct = async (id) => {
     return product;
   } catch (err) {
     console.log(err);
-    throw new Error('Failed to fetch product!');
+    throw new Error("Failed to fetch product!");
   }
 };
 
@@ -78,19 +66,19 @@ export const fetchProduct = async (id) => {
 export const cards = [
   {
     id: 1,
-    title: 'Total Users',
+    title: "Total Users",
     number: 10.928,
     change: 12,
   },
   {
     id: 2,
-    title: 'Stock',
+    title: "Stock",
     number: 8.236,
     change: -2,
   },
   {
     id: 3,
-    title: 'Revenue',
+    title: "Revenue",
     number: 6.642,
     change: 18,
   },

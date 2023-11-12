@@ -32,3 +32,13 @@ npm install bcrypt
 ```
 npm install next-auth@beta
 ```
+
+# How to Deploy
+
+check all is ok?
+
+```
+npm run build
+```
+
+reference: https://www.youtube.com/watch?v=cBg6xA5C60s
