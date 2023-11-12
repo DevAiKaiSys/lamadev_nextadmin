@@ -1,6 +1,6 @@
-import Image from "next/image";
-import MenuLink from "./menuLink/menuLink";
-import styles from "./sidebar.module.css";
+import Image from 'next/image';
+import MenuLink from './menuLink/menuLink';
+import styles from './sidebar.module.css';
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -12,66 +12,66 @@ import {
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
-} from "react-icons/md";
-// import { auth, signOut } from "@/app/auth";
+} from 'react-icons/md';
+import { auth, signOut } from '@/app/auth';
 
 const menuItems = [
   {
-    title: "Pages",
+    title: 'Pages',
     list: [
       {
-        title: "Dashboard",
-        path: "/dashboard",
+        title: 'Dashboard',
+        path: '/dashboard',
         icon: <MdDashboard />,
       },
       {
-        title: "Users",
-        path: "/dashboard/users",
+        title: 'Users',
+        path: '/dashboard/users',
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Products",
-        path: "/dashboard/products",
+        title: 'Products',
+        path: '/dashboard/products',
         icon: <MdShoppingBag />,
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
+        title: 'Transactions',
+        path: '/dashboard/transactions',
         icon: <MdAttachMoney />,
       },
     ],
   },
   {
-    title: "Analytics",
+    title: 'Analytics',
     list: [
       {
-        title: "Revenue",
-        path: "/dashboard/revenue",
+        title: 'Revenue',
+        path: '/dashboard/revenue',
         icon: <MdWork />,
       },
       {
-        title: "Reports",
-        path: "/dashboard/reports",
+        title: 'Reports',
+        path: '/dashboard/reports',
         icon: <MdAnalytics />,
       },
       {
-        title: "Teams",
-        path: "/dashboard/teams",
+        title: 'Teams',
+        path: '/dashboard/teams',
         icon: <MdPeople />,
       },
     ],
   },
   {
-    title: "User",
+    title: 'User',
     list: [
       {
-        title: "Settings",
-        path: "/dashboard/settings",
+        title: 'Settings',
+        path: '/dashboard/settings',
         icon: <MdOutlineSettings />,
       },
       {
-        title: "Help",
-        path: "/dashboard/help",
+        title: 'Help',
+        path: '/dashboard/help',
         icon: <MdHelpCenter />,
       },
     ],
@@ -79,21 +79,23 @@ const menuItems = [
 ];
 
 const Sidebar = async () => {
-  // const { user } = await auth();
+  // const session = await auth();
+  // console.log(session);
+  const { user } = await auth();
   return (
     <div className={styles.container}>
       <div className={styles.user}>
         <Image
           className={styles.userImage}
-          // src={user.img || "/noavatar.png"}
-          src={ "/noavatar.png"}
+          src={user.img || '/noavatar.png'}
+          // src={ "/noavatar.png"}
           alt=""
           width="50"
           height="50"
         />
         <div className={styles.userDetail}>
-          {/* <span className={styles.username}>{user.username}</span> */}
-          <span className={styles.username}>John Joe</span>
+          <span className={styles.username}>{user.username}</span>
+          {/* <span className={styles.username}>John Joe</span> */}
           <span className={styles.userTitle}>Administrator</span>
         </div>
       </div>
@@ -113,10 +115,10 @@ const Sidebar = async () => {
           await signOut();
         }}
       > */}
-        <button className={styles.logout}>
-          <MdLogout />
-          Logout
-        </button>
+      <button className={styles.logout}>
+        <MdLogout />
+        Logout
+      </button>
       {/* </form> */}
     </div>
   );
