@@ -28,3 +28,7 @@ npm i use-debounce --save
 ```
 npm install bcrypt
 ```
+
+```
+npm install next-auth@beta
+```
