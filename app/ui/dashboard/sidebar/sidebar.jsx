@@ -109,17 +109,17 @@ const Sidebar = async () => {
           </li>
         ))}
       </ul>
-      {/* <form
+      <form
         action={async () => {
-          "use server";
+          'use server';
           await signOut();
         }}
-      > */}
-      <button className={styles.logout}>
-        <MdLogout />
-        Logout
-      </button>
-      {/* </form> */}
+      >
+        <button className={styles.logout}>
+          <MdLogout />
+          Logout
+        </button>
+      </form>
     </div>
   );
 };
